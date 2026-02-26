@@ -1,14 +1,14 @@
 # template_agent_youtube
 
-> GPT를 활용해 유튜브 설명글을 자동 생성하는 로컬 에이전트 템플릿
+> A local agent template that automatically generates YouTube descriptions using GPT
 
 ---
 
-## 개요
+## Overview
 
-`input.txt`에 영상 내용을 넣으면, GPT가 자동으로 완성된 유튜브 설명글을 생성해 `output/` 폴더에 저장합니다.
+Write your video content in `input.txt`, and GPT will automatically generate a complete YouTube description saved to the `output/` folder.
 
-단순 대화형 GPT 사용이 아닌, **GPT를 업무 흐름 안에 붙이는 구조**를 익히는 실전 템플릿입니다.
+This is a practical template for learning how to **embed GPT into a workflow** — not just chatting with it.
 
 ```
 input.txt  →  [run.py + GPT API]  →  output/youtube_description.txt
@@ -16,23 +16,23 @@ input.txt  →  [run.py + GPT API]  →  output/youtube_description.txt
 
 ---
 
-## 구조
+## Project Structure
 
 ```
 template_agent_youtube/
-├── run.py               # 메인 에이전트 스크립트
-├── input.txt            # 영상 요약/메모 입력 파일
-├── output/              # 생성된 설명글 저장 폴더
-├── requirements.txt     # 의존성 패키지
-├── .env.example         # 환경변수 템플릿 (복사해서 .env로 사용)
+├── run.py               # Main agent script
+├── input.txt            # Video summary/notes input file
+├── output/              # Generated description output folder
+├── requirements.txt     # Python dependencies
+├── .env.example         # Environment variable template (copy to .env)
 └── .gitignore
 ```
 
 ---
 
-## 시작하기
+## Getting Started
 
-### 1. 패키지 설치
+### 1. Install Dependencies
 
 ```bash
 python3 -m venv .venv
@@ -40,66 +40,65 @@ source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. 환경변수 설정
+### 2. Set Up Environment Variables
 
 ```bash
 cp .env.example .env
 ```
 
-`.env` 파일을 열고 실제 API 키를 입력:
+Open `.env` and enter your API key:
 
 ```
-OPENAI_API_KEY=sk-proj-여기에_실제_API_키_입력
+OPENAI_API_KEY=sk-proj-your_api_key_here
 ```
 
-> API 키는 [OpenAI Platform](https://platform.openai.com/api-keys)에서 발급받으세요.
+> Get your API key at [OpenAI Platform](https://platform.openai.com/api-keys).
 
-### 3. 입력 파일 작성
+### 3. Write Your Input
 
-`input.txt`에 영상 내용을 작성합니다. (요약, 메모, 스크립트 등 자유 형식)
+Add your video content to `input.txt` in any format — summary, notes, or script.
 
 ```
-오늘 영상은 로컬 에이전트를 만드는 방법에 대해 다룹니다.
-input 폴더에 파일을 넣으면 GPT가 자동으로 처리합니다.
+Today's video is about building a local agent from scratch.
+Put a file in the input folder and GPT processes it automatically.
 ...
 ```
 
-### 4. 실행
+### 4. Run
 
 ```bash
 python run.py
 ```
 
-결과물은 `output/youtube_description.txt`에 저장됩니다.
+The result will be saved to `output/youtube_description.txt`.
 
 ---
 
-## 출력 예시
+## Output Example
 
 ```
-오늘 영상은
-로컬 에이전트를 직접 만들어보는 실전 편입니다.
+Today's video covers how to build a local agent from scratch.
 ...
 
-✅ 이런 분들께 추천합니다
-• API 기반 자동화가 궁금한 분
+✅ Who this is for
+• Anyone curious about API-based automation
 ...
 
-#유튜브자동화 #GPT활용 #로컬에이전트 ...
+#YouTubeAutomation #GPT #LocalAgent ...
 ```
 
 ---
 
-## 보안 주의사항
+## Security
 
-- `.env` 파일은 **절대 커밋하지 마세요** — `.gitignore`에 포함되어 있습니다.
-- API 키가 외부에 노출된 경우, 즉시 [OpenAI Platform](https://platform.openai.com/api-keys)에서 키를 재발급하세요.
+- Never commit your `.env` file — it is excluded via `.gitignore`.
+- If your API key is exposed, revoke and regenerate it immediately at [OpenAI Platform](https://platform.openai.com/api-keys).
 
 ---
 
-## 관련 채널
+## Channel
 
-**크랩(Crab)** — 어렵지 않게, 일에 바로 쓰는 AI.
-매주 실전 / 개념 / 인사이트로 한 문제씩 함께 해결합니다.
+**Crab** — AI you can actually use at work, without the complexity.
+Practical tips, concepts, and insights — one problem at a time, every week.
 
 📩 info@creativeflow.co.kr
